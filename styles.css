@@ -1,0 +1,34 @@
+/* main {
+	width: 100%;
+	background-color: pink;
+}
+
+.flip-card {
+	display: flex;
+	direction: column;
+	align-content: center;
+	justify-content: center;
+	width: 40%;
+	height: 40%;
+	align-self: center;
+}
+
+.flip-card-inner {
+	width: 40%;
+	height: 40%;
+	align-content: center;
+	justify-content: space-between;
+	background-color: olive;
+	border: 3px solid black;
+}
+
+.formcss {
+	width: 70%;
+	align-content: center;
+	justify-content: space-between;
+}
+
+.Qnumbers {
+	font-weight: bold;
+	align-self: start;
+} */
