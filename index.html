@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flashcard</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
@@ -15,19 +15,20 @@
             <form class="flip-card">
                 <h2>FlashCard : 'How to' Tricks</h2>
                     <div class="flip-card-inner">
-                        <label for="question"><h3>Question <div class="questionNum" value="">1/12</div></h3></label>
+                        <h3>Question</h3>
+                        <div class="questionNum">1/12</div>
                             <div class="flip-card-front">
-                                <h3 id="question" value="Question"></h3>
+                                <h3 id="question">Question</h3>
                                 <input type="text" class="inputText">
                                 <input type="button" value="submit" id="btn">
+                                <div >Your score is: <span class="score">0</span></div>
                             </div>
-                            <div class="score"></div>
+
                     </div>
-            
-                    <!-- <div class="flip-card-back " >
-                        <label for="answer"><h3>Answer</h3></label>
-                            <p id="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim excepturi, unde temporibus maxime laudantium nesciunt cumque sunt odio recusandae voluptates soluta eveniet, minus optio ratione vero accusantium deleniti delectus! Corrupti.</p>
-                    </div> -->
+                    <div class="flip-card-back " >
+                            <h3 class="answer"></h3>
+                            <!-- <p id="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim excepturi, unde temporibus maxime laudantium nesciunt cumque sunt odio recusandae voluptates soluta eveniet, minus optio ratione vero accusantium deleniti delectus! Corrupti.</p> -->
+                    </div>
             </form>
         </section>
     </main>

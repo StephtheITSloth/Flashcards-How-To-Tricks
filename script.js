@@ -2,10 +2,10 @@ const question = document.querySelector('#question');
 const input = document.querySelector('.inputText');
 const btns = document.querySelector('#btn');
 const questionNumber = document.querySelector('.questionNum');
-const answer = document.querySelector('#answer');
-const score = document.querySelector('.score')
-console.log(input);
+const answer = document.querySelector('.answer');
+const userScore = document.querySelector('.score');
 let currentIndex = 0;
+let score = 0;
 
 const flashcard = [
 	{
@@ -76,15 +76,34 @@ answer.innerText = flashcard[currentIndex].answer;
 
 btns.addEventListener('click', (event) => {
 	event.preventDefault();
-	console.log(flashcard[currentIndex].answer);
+	// console.log(flashcard[currentIndex].answer);
 	if (flashcard[currentIndex].answer.includes(input.value)) {
-		console.log('correct');
+		console.log(input.value);
+		input.value = '';
 		currentIndex++;
+		console.log(currentIndex);
 		question.innerText = flashcard[currentIndex].question;
+		answer.innerText = flashcard[currentIndex].answer;
 		questionNumber.innerText = `${currentIndex}/${flashcard.length}`;
+		score += 10
+		userScore.innerText = score;
 	} else if (input.value != flashcard[currentIndex].answer) {
 		console.log('Wrong, try again');
 	} else {
 		//flip function
 	}
 });
+
+let winningcondition = () => {
+	if (currentIndex == 10) {
+		if (score >= 60) {
+			let congratulation = document.createElement('P');
+			congratulation.innerText = `Congratulation!!!`;
+			document.body.appendChild(congratulation);
+		}else {
+			let tryAgain = document.createElement('P')
+			tryAgain.innerText = `Try again!`
+			document.body.appendChild(tryAgain)
+		}
+	}
+};
