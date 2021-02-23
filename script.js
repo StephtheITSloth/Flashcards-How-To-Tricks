@@ -3,13 +3,14 @@ const input = document.querySelector('.inputText');
 const btns = document.querySelector('#btn');
 const questionNumber = document.querySelector('.questionNum');
 const answer = document.querySelector('#answer');
-
+const score = document.querySelector('.score')
+console.log(input);
 let currentIndex = 0;
 
 const flashcard = [
 	{
 		question: 'What does ES6 stand for?',
-		answer: ['ecmascript6 ', ' Ecmascript6 ', ' ecma script 6'],
+		answer: ['ecmascript6 ', 'Ecmascript6 ', 'ecma script 6'],
 	},
 	{
 		question: 'How do you capitalize the first letter in a string?',
@@ -62,18 +63,28 @@ const flashcard = [
 	},
 ];
 
+// const cards = document.querySelectorAll('.flip-card-inner');
+
+// function flipCard() {
+// 	this.classList.toggle('flip');
+// }
+// cards.forEach((card) => card.addEventListener('click', flipCard));
+
 question.innerText = flashcard[currentIndex].question;
 questionNumber.innerText = `${currentIndex + 1}/${flashcard.length}`;
 answer.innerText = flashcard[currentIndex].answer;
 
 btns.addEventListener('click', (event) => {
 	event.preventDefault();
-	if (input.value == flashcard[currentIndex].answer) {
+	console.log(flashcard[currentIndex].answer);
+	if (flashcard[currentIndex].answer.includes(input.value)) {
 		console.log('correct');
 		currentIndex++;
 		question.innerText = flashcard[currentIndex].question;
 		questionNumber.innerText = `${currentIndex}/${flashcard.length}`;
+	} else if (input.value != flashcard[currentIndex].answer) {
+		console.log('Wrong, try again');
 	} else {
-		console.log('wrong');
+		//flip function
 	}
 });
