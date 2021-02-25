@@ -23,47 +23,47 @@ const flashcard = [
 		question: 'What does return do in a function?',
 		answer: ['exits the function', 'exits'],
 	},
-	{
-		question:
-			'How do you select an element from your HTML to your javascript using DOM?',
-		answer: [
-			'document.querySelector',
-			'document.getElementByTagName',
-			'document.getElementById',
-			'document.getElementByClass',
-		],
-	},
-	{
-		question:
-			'Write your code to access the value in a "target" key, which is stored in the first index of the array "array"',
-		answer: ['array[0].target', "array[0].['target']"],
-	},
-	{
-		question: 'What does the method forEach do?',
-		answer: [
-			'Iterate through an array and return an array that match a condition',
-		],
-	},
-	{
-		question: 'What is the big O of a higher order function?',
-		answer: ['Quadratic', 'quadratic'],
-	},
-	{
-		question: 'What are the different big O?',
-		answer: ['linear', 'Exponential', 'Logarythmic', 'Quadratic'],
-	},
-	{
-		question: 'What does OOP stand for in Javascript?',
-		answer: ['Object Oriented Programming'],
-	},
-	{
-		question: 'What is the first thing to do when working on a project?',
-		answer: ['Set your Github with a ReadMe', 'Plan it', 'Research'],
-	},
-	{
-		question: 'Should you worry about making your website accessible?',
-		answer: ['Yes'],
-	},
+	// {
+	// 	question:
+	// 		'How do you select an element from your HTML to your javascript using DOM?',
+	// 	answer: [
+	// 		'document.querySelector',
+	// 		'document.getElementByTagName',
+	// 		'document.getElementById',
+	// 		'document.getElementByClass',
+	// 	],
+	// },
+	// {
+	// 	question:
+	// 		'Write your code to access the value in a "target" key, which is stored in the first index of the array "array"',
+	// 	answer: ['array[0].target', "array[0].['target']"],
+	// },
+	// {
+	// 	question: 'What does the method forEach do?',
+	// 	answer: [
+	// 		'Iterate through an array and return an array that match a condition',
+	// 	],
+	// },
+	// {
+	// 	question: 'What is the big O of a higher order function?',
+	// 	answer: ['Quadratic', 'quadratic'],
+	// },
+	// {
+	// 	question: 'What are the different big O?',
+	// 	answer: ['linear', 'Exponential', 'Logarythmic', 'Quadratic'],
+	// },
+	// {
+	// 	question: 'What does OOP stand for in Javascript?',
+	// 	answer: ['Object Oriented Programming'],
+	// },
+	// {
+	// 	question: 'What is the first thing to do when working on a project?',
+	// 	answer: ['Set your Github with a ReadMe', 'Plan it', 'Research'],
+	// },
+	// {
+	// 	question: 'Should you worry about making your website accessible?',
+	// 	answer: ['Yes'],
+	// },
 ];
 
 question.innerText = flashcard[currentIndex].question;
