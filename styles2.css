@@ -1,0 +1,71 @@
+/* let's apply the 3D transformation here. */
+
+.card {
+	background-color: transparent;
+	perspective: 1000px;
+
+}
+
+.card-single {
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+	cursor: pointer;
+	position: relative;
+}
+
+.card-single.flip {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+/* .card-single.flip-again{
+	transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+} */
+
+.card-face {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+
+.card-face-front,
+.card-face-back {
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+
+.card-face-front {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transform: rotateX(0deg);
+	-webkit-transform: rotateX(0deg);
+}
+
+.card-face-back {
+	z-index: 6;
+	right: 0;
+	left: 0;
+	top: 50px;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	/* backface-visibility: visible; */
+}
+
+.card-face-back.flip {
+	backface-visibility: visible;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+
+/* .card-face-front.flip-again {
+	backface-visibility: visible;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+} */
+/* https://www.w3schools.com/css/css3_animations.asp
+hatchpath://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */

@@ -4,6 +4,9 @@ const btns = document.querySelector('#btn');
 const questionNumber = document.querySelector('.questionNum');
 const answer = document.querySelector('.answer');
 const userScore = document.querySelector('.score');
+const card = document.querySelector('.card-single');
+const headerQ = document.querySelector('.headerQ');
+const returnToQuestion = document.querySelector('.returnTo');
 let currentIndex = 0;
 let score = 0;
 
@@ -13,12 +16,12 @@ const flashcard = [
 		answer: ['ecmascript6 ', 'Ecmascript6 ', 'ecma script 6'],
 	},
 	{
-		question: 'How do you capitalize the first letter in a string?',
-		answer: ['array.charAt(0).toUpperCase() + array.subString(1)'],
+		question: 'How select the first character in a string?',
+		answer: ['charAt(0)', 'CharAt(0)'],
 	},
 	{
 		question: 'What does return do in a function?',
-		answer: ['exits the function', 'exit'],
+		answer: ['exits the function', 'exits'],
 	},
 	{
 		question:
@@ -63,34 +66,31 @@ const flashcard = [
 	},
 ];
 
-// const cards = document.querySelectorAll('.flip-card-inner');
-
-// function flipCard() {
-// 	this.classList.toggle('flip');
-// }
-// cards.forEach((card) => card.addEventListener('click', flipCard));
-
 question.innerText = flashcard[currentIndex].question;
 questionNumber.innerText = `${currentIndex + 1}/${flashcard.length}`;
 answer.innerText = flashcard[currentIndex].answer;
-
 btns.addEventListener('click', (event) => {
 	event.preventDefault();
-	// console.log(flashcard[currentIndex].answer);
 	if (flashcard[currentIndex].answer.includes(input.value)) {
-		console.log(input.value);
+		// console.log(input.value);
 		input.value = '';
 		currentIndex++;
-		console.log(currentIndex);
+		// console.log(currentIndex);
 		question.innerText = flashcard[currentIndex].question;
 		answer.innerText = flashcard[currentIndex].answer;
-		questionNumber.innerText = `${currentIndex}/${flashcard.length}`;
-		score += 10
+		questionNumber.innerText = `${currentIndex + 1}/${flashcard.length}`;
+		score += 10;
 		userScore.innerText = score;
-	} else if (input.value != flashcard[currentIndex].answer) {
-		console.log('Wrong, try again');
 	} else {
-		//flip function
+		document.querySelector('.card-single').classList.toggle('flip');
+		questionNumber.innerText = ' ';
+		headerQ.innerText = ' ';
+		headerQ.style.visibility = 'hidden';
+		returnToQuestion.addEventListener('click', (event) => {
+			event.preventDefault();
+			// console.log('event.dataset');
+			// document.querySelector('.card-single').classList.toggle('flip-back');
+		});
 	}
 });
 
@@ -100,10 +100,22 @@ let winningcondition = () => {
 			let congratulation = document.createElement('P');
 			congratulation.innerText = `Congratulation!!!`;
 			document.body.appendChild(congratulation);
-		}else {
-			let tryAgain = document.createElement('P')
-			tryAgain.innerText = `Try again!`
-			document.body.appendChild(tryAgain)
+		} else {
+			let tryAgain = document.createElement('P');
+			tryAgain.innerText = `Try again!`;
+			document.body.appendChild(tryAgain);
 		}
 	}
 };
+
+// /* =========================================================
+// =========================================================
+// =========REFERENCES FOR JAVASCRIPT========================
+// =========================================================
+// =========================================================
+// //www.youtube.com/watch?v=PkZNo7MFNFg
+// //www.w3schools.com/tags/ref_eventattributes.asp
+// //www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+// //css-tricks.com/almanac/properties/b/backface-visibility/
+// //www.youtube.com/watch?v=PFmuCDHHpwk
+//https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
