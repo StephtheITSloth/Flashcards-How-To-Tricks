@@ -3,7 +3,7 @@
 A flashcard game to help Software Engineers revisit 'How To' tricks and interview related questions.
 
 ## User Story
-
+I am a software Engineer, that enter the answer for a question so that I can check my knowlege.
 ## Unsolved Problems
 At time, the frame of the card changes when you move to other questions.
 Not being able to return to the card front when pressing the return to card button.
