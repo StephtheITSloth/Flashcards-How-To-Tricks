@@ -15,7 +15,7 @@ Not being able to achieve the 3d effect that will bring you back to the front of
 https://github.com/StephtheITSloth
 
 
-## Fork repo and Copy SHH tom your terminal
+## Fork repo and Copy SSH to your terminal
 
 ### For the HTML: Set up for the flip effectthe HTML with a card container. Inside create a single card div. Then you will need two more divs; one for the front of the card and the other for the back of the card.
 
